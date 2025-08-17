@@ -8,25 +8,33 @@
 </head>
 <body>
 
-    <div class="voiceinator">
+   <div class="voiceinator">
+        <h1>The Voiceinator 5000</h1>
 
-      <h1>The Voiceinator 5000</h1>
+        <select name="voice" id="voices">
+            <option value="">Select A Voice</option>
+        </select>
 
-      <select name="voice" id="voices">
-        <option value="">Select A Voice</option>
-      </select>
+        <div class="slider-container">
+            <label for="rate">Rate:</label>
+            <input name="rate" id="rate" type="range" min="0.1" max="3" value="1" step="0.1">
+            <span class="slider-value" id="rate-value">1.0</span>
+        </div>
 
-      <label for="rate">Rate:</label>
-      <input name="rate" type="range" min="0" max="3" value="1" step="0.1">
+        <div class="slider-container">
+            <label for="pitch">Pitch:</label>
+            <input name="pitch" id="pitch" type="range" min="0.1" max="2" value="1" step="0.1">
+            <span class="slider-value" id="pitch-value">1.0</span>
+        </div>
 
-      <label for="pitch">Pitch:</label>
+        <textarea name="text" id="text" placeholder="Enter text to speak...">Hello! I love JavaScript 👍</textarea>
+        
+        <div class="error-message" id="error-message"></div>
 
-      <input name="pitch" type="range" min="0" max="2" step="0.1">
-      <textarea name="text">Hello! I love JavaScript 👍</textarea>
-      <button id="stop">Stop!</button>
-      <button id="speak">Speak</button>
-
+        <button id="stop">Stop!</button>
+        <button id="speak">Speak</button>
     </div>
+
 
 <script>
   const msg = new SpeechSynthesisUtterance();
